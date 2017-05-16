@@ -1,4 +1,20 @@
-* {
-  background-color: mediumpurple; }
+main {
+  margin-bottom: 1.5em; }
+  main article {
+    margin-bottom: 0; }
+    main article .img-container {
+      min-height: 300px; }
+  main .secondary-content {
+    background-color: #ffffff;
+    padding: 20px; }
+
+p {
+  margin-bottom: 0; }
+
+@media (max-width: 767px) {
+  main {
+    margin-bottom: 1.5em; }
+    main article {
+      margin-bottom: 0; } }
 
 /*# sourceMappingURL=main.css.map */
