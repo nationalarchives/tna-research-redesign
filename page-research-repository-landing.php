@@ -10,10 +10,11 @@ get_header();
         <div class="container">
             <div class="row">
                 <main id="main" class="col-xs-12 col-sm-8 col-md-8" role="main">
+	                <?php $feat_image = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                             <div class="entry-header img-container"
-                                 style="background-image: url('http://placehold.it/793x300')">
+                                 style="background-image: url('<?php echo preg_replace('/https?:\/\/research.(live|dev|test)lb\.nationalarchives\.gov\.uk\//','/', $feat_image); ?>')">
                                 <h1><?php the_title(); ?></h1>
                             </div>
                             <div class="entry-content clearfix">
