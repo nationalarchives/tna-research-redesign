@@ -10,9 +10,9 @@ function research_meta_boxes() {
 			'priority' => 'high',
 			'fields' => array(
 				array(
-					'name' => 'Lead Name',
+					'name' => 'Lead Author',
 					'desc' => '',
-					'id' => 'lead_name',
+					'id' => 'lead_author',
 					'type' => 'text',
 					'std' => ''
 				),

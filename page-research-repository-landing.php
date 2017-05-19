@@ -33,17 +33,16 @@ get_header();
 							'posts_per_page' => - 1,
 							'post_parent'    => $post->ID,
 							'order'          => 'ASC',
-//							'orderby'        => 'meta_value',
-//							'meta_key'       => 'lead_name',
+							'orderby'        => 'meta_value',
+							'meta_key'       => 'lead_name',
 						);
-						$child             = new WP_Query( $args );
-						?>
+						$child = new WP_Query( $args ); ?>
 						<?php if ( $child->have_posts() ) : while ( $child->have_posts() ) : $child->the_post(); ?>
                             <div class="content-box">
                                 <a href="<?php the_permalink(); ?>"
                                    title="<?php the_title(); ?>""><h3><?php the_title(); ?></h3></a>
                                 <span class="entry-meta">Author:</span>
-                                <span class="entry-meta"><?php echo ' '.$lead_author; ?></span>
+                                <span class="entry-meta"><?php echo ' ' . $lead_author; ?></span>
                                 <p><?php the_excerpt(); ?></p>
                                 <hr>
                             </div>
