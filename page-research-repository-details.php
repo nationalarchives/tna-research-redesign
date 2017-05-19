@@ -17,15 +17,43 @@ get_header(); ?>
                             <div class="entry-content clearfix">
                                 <span class="entry-meta">
                                 <?php
-                                $lead_author = get_post_meta( $post->ID, 'lead_author', true );
+                                $lead_author   = get_post_meta( $post->ID, 'lead_author', true );
                                 $other_authors = get_post_meta( $post->ID, 'other_author', true );
-                                if (empty ($other_authors)) { echo '<strong>Author:</strong>';
-                                } else { echo '<strong>Authors:</strong>'; }
-                                    echo ' '.$lead_author;
-                                    if (!empty ($other_authors)) {
-	                                    echo ', '.$other_authors;
-                                    }
+                                if ( empty ( $other_authors ) ) {
+	                                echo '<strong>Author:</strong>';
+                                } else {
+	                                echo '<strong>Authors:</strong>';
+                                }
+                                echo ' ' . $lead_author;
+                                if ( ! empty ( $other_authors ) ) {
+	                                echo ', ' . $other_authors;
+                                }
+                                ?>
+                                </span>
+                                <br/>
+                                <span class="entry-meta">
+                                    <strong>Date of publication: </strong>
+                                    <?php
+                                    $date_published = get_post_meta( $post->ID, 'date_published', true );
+                                    $format_date = date('d F Y', strtotime($date_published));
+                                    echo $format_date;
                                     ?>
+                                </span>
+                                <br/>
+                                <span class="entry-meta">
+                                    <strong>Keywords:</strong>
+	                                <?php
+	                                //displaying custom taxonomy 'keywords'
+	                                $keywords_terms = wp_get_post_terms($post->ID, 'keywords');
+	                                $i = 0;
+	                                foreach ( $keywords_terms as $term ) { $i++;
+		                                if ( $i > 1 ) {
+			                                echo ', ';
+		                                }
+		                                echo $term->name;
+	                                }
+	                                ?>
+                                </span>
                                 <hr>
 								<?php the_content(); ?>
                             </div>

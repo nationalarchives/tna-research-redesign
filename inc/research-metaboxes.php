@@ -29,6 +29,13 @@ function research_meta_boxes() {
 					'id' => 'date_published',
 					'type' => 'date',
 					'std' => ''
+				),
+				array(
+					'name' => 'Published in',
+					'desc' => '',
+					'id' => 'published_in',
+					'type' => 'text',
+					'std' => ''
 				)
 			)
 		)

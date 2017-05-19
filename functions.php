@@ -24,3 +24,4 @@ function tna_child_styles()
 add_action('wp_enqueue_scripts', 'tna_child_styles');
 
 include 'inc/research-metaboxes.php';
+include 'inc/taxonomy.php';
