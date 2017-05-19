@@ -10,67 +10,48 @@ get_header();
         <div class="container">
             <div class="row">
                 <main id="main" class="col-xs-12 col-sm-8 col-md-8" role="main">
-	                <?php $feat_image = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>
+					<?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                             <div class="entry-header img-container"
-                                 style="background-image: url('<?php echo preg_replace('/https?:\/\/research.(live|dev|test)lb\.nationalarchives\.gov\.uk\//','/', $feat_image); ?>')">
+                                 style="background-image: url('<?php echo preg_replace( '/https?:\/\/research.(live|dev|test)lb\.nationalarchives\.gov\.uk\//', '/', $feat_image ); ?>')">
                                 <h1><?php the_title(); ?></h1>
                             </div>
                             <div class="entry-content clearfix">
 								<?php the_content(); ?>
                             </div>
                         </article>
-					<?php endwhile; endif; ?>
+					<?php endwhile;
+					else: ?>
+                        <p>Sorry, no content</p>
+					<?php endif;
+					wp_reset_query(); ?>
                     <div class="col-xs-12 col-md-12 secondary-content">
-                        <div class="content-box">
-                            <a href="#"><h3>This is a title</h3></a>
-                            <span class="entry-meta">
-                                <strong>Author:</strong>
-                            </span>
-                            <span class="entry-meta">
-                                John Doe
-                            </span>
-                            <p>
-                                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
-                                interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
-                                are also reproduced in their exact original form, accompanied by English versions from
-                                the 1914 translation by H. Rackham.
-                            </p>
-                            <hr>
-                        </div>
-                        <div class="content-box">
-                            <a href="#"><h3>This is a title</h3></a>
-                            <span class="entry-meta">
-                                <strong>Author:</strong>
-                            </span>
-                            <span class="entry-meta">
-                                John Doe
-                            </span>
-                            <p>
-                                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
-                                interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
-                                are also reproduced in their exact original form, accompanied by English versions from
-                                the 1914 translation by H. Rackham.
-                            </p>
-                            <hr>
-                        </div>
-                        <div class="content-box">
-                            <a href="#"><h3>This is a title</h3></a>
-                            <span class="entry-meta">
-                                <strong>Author:</strong>
-                            </span>
-                            <span class="entry-meta">
-                                John Doe
-                            </span>
-                            <p>
-                                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
-                                interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
-                                are also reproduced in their exact original form, accompanied by English versions from
-                                the 1914 translation by H. Rackham.
-                            </p>
-                            <hr>
-                        </div>
+						<?php $lead_author = get_post_meta( $post->ID, 'lead_name', true );
+						$args              = array(
+							'post_type'      => 'page',
+							'posts_per_page' => - 1,
+							'post_parent'    => $post->ID,
+							'order'          => 'ASC',
+//							'orderby'        => 'meta_value',
+//							'meta_key'       => 'lead_name',
+						);
+						$child             = new WP_Query( $args );
+						?>
+						<?php if ( $child->have_posts() ) : while ( $child->have_posts() ) : $child->the_post(); ?>
+                            <div class="content-box">
+                                <a href="<?php the_permalink(); ?>"
+                                   title="<?php the_title(); ?>""><h3><?php the_title(); ?></h3></a>
+                                <span class="entry-meta">Author:</span>
+                                <span class="entry-meta"><?php echo ' '.$lead_author; ?></span>
+                                <p><?php the_excerpt(); ?></p>
+                                <hr>
+                            </div>
+						<?php endwhile;
+						else: ?>
+                            <p>Sorry, no content</p>
+						<?php endif;
+						wp_reset_query(); ?>
                     </div>
                 </main>
 				<?php

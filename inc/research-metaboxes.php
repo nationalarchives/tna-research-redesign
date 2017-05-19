@@ -33,8 +33,21 @@ function research_meta_boxes() {
 			)
 		)
 	);
-	foreach ( $research_meta_boxes as $meta_box ) {
-		$research_box = new CreateMetaBox( $meta_box );
+	if (isset($_GET['post'])) {
+		$post_id = $_GET['post'];
+	} else {
+		if (isset($_POST['post_ID'])) {
+			$post_id = $_POST['post_ID'];
+		} else {
+			$post_id = '';
+		}
+	}
+	if( !isset( $post_id ) ) return;
+	$template_file = get_post_meta($post_id, '_wp_page_template', true);
+	if ($template_file == 'page-research-repository-details.php') {
+		foreach ( $research_meta_boxes as $meta_box ) {
+			$research_box = new CreateMetaBox( $meta_box );
+		}
 	}
 }
 add_action( 'init', 'research_meta_boxes' );

@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: Research repository details
+*/
+get_header(); ?>
 <?php get_template_part( 'breadcrumb' ); ?>
 
 	<div id="primary" class="content-area">
