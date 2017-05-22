@@ -89,7 +89,7 @@ get_header(); ?>
 				if ( $sidebar == 'false' ) {
 					// do nothing
 				} else {
-					get_sidebar( 'siblings' );
+					get_sidebar( 'research-details' );
 				}
 				?>
             </div>

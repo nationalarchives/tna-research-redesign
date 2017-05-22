@@ -34,7 +34,7 @@ get_header();
 							'posts_per_page' => - 1,
 							'post_parent'    => $post->ID,
 							'order'          => 'ASC',
-							'orderby'        => 'meta_value',
+							'orderby'        => 'menu_order',
 							'meta_key'       => 'lead_author'
 						);
 						$child = new WP_Query( $args ); ?>
@@ -79,7 +79,7 @@ get_header();
 				if ( $sidebar == 'false' ) {
 					// do nothing
 				} else {
-					get_sidebar( 'siblings' );
+					get_sidebar( $sidebar );
 				}
 				?>
             </div>

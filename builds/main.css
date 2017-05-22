@@ -1,12 +1,7 @@
-.page-template-page-section-landing article {
-  margin-bottom: 1.5em; }
-
 main {
   margin-bottom: 1.5em; }
-  main article {
-    margin-bottom: 0; }
-    main article .img-container {
-      min-height: 300px; }
+  main article .img-container {
+    min-height: 300px; }
   main .secondary-content {
     background-color: #ffffff;
     padding: 20px; }
