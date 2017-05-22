@@ -21,8 +21,10 @@
 		<ul class="sibling">
 			<?php
 			$args = array(
-				'child_of' => $parent_id,
-				'parent' => $parent_id,
+				//'child_of' => $parent_id,
+				'child_of' => $post->post_parent,
+				//'parent' => $parent_id,
+                //'exclude' => $post->ID,
 				'hierarchical' => 0,
 				'sort_column' => 'menu_order',
 				'exclude' => array( $post->ID, $home_id ),

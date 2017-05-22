@@ -27,22 +27,43 @@ get_header();
 					<?php endif;
 					wp_reset_query(); ?>
                     <div class="col-xs-12 col-md-12 secondary-content">
-						<?php $lead_author = get_post_meta( $post->ID, 'lead_name', true );
-						$args              = array(
+					    <?php
+					    $lead_author = get_post_meta( $post->ID, 'lead_author', true );
+						$args = array(
 							'post_type'      => 'page',
 							'posts_per_page' => - 1,
 							'post_parent'    => $post->ID,
 							'order'          => 'ASC',
 							'orderby'        => 'meta_value',
-							'meta_key'       => 'lead_name',
+							'meta_key'       => 'lead_author'
 						);
 						$child = new WP_Query( $args ); ?>
 						<?php if ( $child->have_posts() ) : while ( $child->have_posts() ) : $child->the_post(); ?>
                             <div class="content-box">
-                                <a href="<?php the_permalink(); ?>"
-                                   title="<?php the_title(); ?>""><h3><?php the_title(); ?></h3></a>
-                                <span class="entry-meta">Author:</span>
-                                <span class="entry-meta"><?php echo ' ' . $lead_author; ?></span>
+                                <?php
+    $lead_author = get_post_meta( $post->ID, 'lead_author', true );
+    $other_authors = get_post_meta( $post->ID, 'other_author', true );
+    ?>
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"">
+                                    <h3><?php the_title(); ?></h3>
+                                </a>
+                                <span class="entry-meta">
+                                    <?php
+                                        if ($other_authors) {
+                                            echo '<strong>Authors:</strong>';
+                                        } else {
+                                            echo '<strong>Author:</strong>';
+                                        }
+                                    ?>
+                                </span>
+                                <span class="entry-meta">
+                                    <?php
+                                    echo $lead_author;
+                                    if ($other_authors) {
+                                        echo ' ; '.$other_authors;
+                                    }
+                                    ?>
+                                </span>
                                 <p><?php the_excerpt(); ?></p>
                                 <hr>
                             </div>
@@ -58,7 +79,7 @@ get_header();
 				if ( $sidebar == 'false' ) {
 					// do nothing
 				} else {
-					get_sidebar( $sidebar );
+					get_sidebar( 'siblings' );
 				}
 				?>
             </div>
