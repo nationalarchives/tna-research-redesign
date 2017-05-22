@@ -31,12 +31,26 @@ function research_meta_boxes() {
 					'std' => ''
 				),
 				array(
-					'name' => 'Published in',
+					'name' => 'Published by',
 					'desc' => '',
-					'id' => 'published_in',
+					'id' => 'published_by',
 					'type' => 'text',
 					'std' => ''
-				)
+				),
+				array(
+					'name' => 'File Url',
+					'desc' => 'Type or paste the url for the file in this field',
+					'id' => 'file_url',
+					'type' => 'text',
+					'std' => ''
+				),
+				array(
+					'name' => 'File Size',
+					'desc' => 'Type or paste the file size for the file',
+					'id' => 'file_size',
+					'type' => 'text',
+					'std' => ''
+				),
 			)
 		)
 	);

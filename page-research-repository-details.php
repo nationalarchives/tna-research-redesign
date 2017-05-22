@@ -54,8 +54,28 @@ get_header(); ?>
 	                                }
 	                                ?>
                                 </span>
+                                <br/>
+                                <span class="entry-meta">
+                                    <?php
+                                        $publishedBy = get_post_meta( $post->ID, 'published_by', true );
+                                        if ($publishedBy) {
+                                            echo "<strong>Published by:</strong> $publishedBy";
+                                        }
+                                    ?>
+                                </span>
                                 <hr>
 								<?php the_content(); ?>
+                                <?php
+                                    $fileUrl = get_post_meta( $post->ID, 'file_url', true );
+                                    $fileSize = get_post_meta( $post->ID, 'file_size', true );
+                                    $urlString = sprintf('
+                                    <div class="file-link">
+                                        <a class="button bottom-spacing" target="_blank" href="%s">View (PDF, %s)</a>
+                                    </div>', $fileUrl, $fileSize);
+                                    if ($fileSize && $fileUrl == true) {
+                                        echo $urlString;
+                                    }
+                                ?>
                             </div>
                         </article>
 					<?php endwhile;

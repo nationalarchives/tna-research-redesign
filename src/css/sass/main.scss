@@ -17,6 +17,15 @@ main {
 p {
   margin-bottom: 0;
 }
+.entry-meta {
+  font-size: .9em;
+}
+.file-link {
+  margin-top: 1em;
+  a {
+    float: right;
+  }
+}
 
 @media (max-width: 767px) {
   main {
