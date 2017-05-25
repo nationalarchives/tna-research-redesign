@@ -23,4 +23,3 @@ function custom_taxonomy() {
 	);
 	register_taxonomy( 'keywords', 'page', $args );
 }
-add_action( 'init', 'custom_taxonomy' );

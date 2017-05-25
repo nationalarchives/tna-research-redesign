@@ -71,4 +71,4 @@ function research_meta_boxes() {
 		}
 	}
 }
-add_action( 'init', 'research_meta_boxes' );
+

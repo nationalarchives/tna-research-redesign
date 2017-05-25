@@ -13,31 +13,31 @@ module.exports = function (grunt) {
 
         watch: {
             scripts: {
-                files: 'src/js/*.js',
+                files: 'js/*.js',
                 tasks: ['concat', 'uglify']
             },
             css: {
-                files: 'src/css/sass/*.scss',
+                files: 'css/sass/*.scss',
                 tasks: ['sass', 'cssmin']
             }
         },
 
         concat: {
             js: {
-                src: ['src/js/*.js'],
-                dest: 'builds/scripts.js'
+                src: ['js/*.js'],
+                dest: 'js/scripts.js'
             },
             css: {
                 src: ['css/main.css'],
-                dest: 'builds/main.css'
+                dest: 'css/main.css'
             }
         },
 
         sass: {
             build: {
                 files: [{
-                    src: ['src/css/sass/main.scss'],
-                    dest: 'builds/main.css'
+                    src: ['css/sass/main.scss'],
+                    dest: 'css/main.css'
                 }]
             }
         },
@@ -45,8 +45,8 @@ module.exports = function (grunt) {
         uglify: {
             build: {
                 files: [{
-                    src: 'builds/scripts.js',
-                    dest: 'builds/scripts.js'
+                    src: 'js/scripts.js',
+                    dest: 'js/scripts.js'
                 }]
             }
         },
@@ -55,9 +55,9 @@ module.exports = function (grunt) {
             target: {
                 files: [{
                     expand: true,
-                    cwd: 'builds/',
+                    cwd: 'css/',
                     src: ['*.css', '!*.min.css'],
-                    dest: 'builds/',
+                    dest: 'css/',
                     ext: '.min.css'
                 }]
             }
@@ -75,6 +75,5 @@ module.exports = function (grunt) {
 
     //Default Task(s)
     grunt.registerTask('default', ['sass', 'cssmin', 'concat', 'uglify', 'watch']);
-
 
 };
