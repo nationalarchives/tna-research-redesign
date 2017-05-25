@@ -45,7 +45,7 @@ get_header();
                                     </h3>
                                 </a>
                                 <span class="entry-meta">
-                                    <?php displayAuthors(); ?>
+                                    <?php display_authors(); ?>
                                 </span>
                                 <p>
                                     <?php the_excerpt(); ?>
@@ -58,7 +58,7 @@ get_header();
                         wp_reset_query(); ?>
                     </div>
                 </main>
-                <?php displaySidebar(); ?>
+                <?php display_sidebar(); ?>
             </div>
         </div>
     </div>

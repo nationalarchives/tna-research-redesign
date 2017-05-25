@@ -16,25 +16,25 @@ get_header(); ?>
                             </div>
                             <div class="entry-content clearfix">
                                 <span class="entry-meta">
-                                <?php displayAuthors(); ?>
+                                <?php display_authors(); ?>
                                 </span>
                                 <br/>
                                 <span class="entry-meta">
                                     <strong>Date of publication: </strong>
-                                    <?php displayDateOfPublication(); ?>
+                                    <?php display_date_of_publication(); ?>
                                 </span>
                                 <br/>
                                 <span class="entry-meta">
                                     <strong>Keywords:</strong>
-	                                <?php displayKeywordsTaxonomy() ?>
+	                                <?php display_keywords_taxonomy(); ?>
                                 </span>
                                 <br/>
                                 <span class="entry-meta">
-                                    <?php displayPublishedBy(); ?>
+                                    <?php display_published_by(); ?>
                                 </span>
                                 <hr>
 								<?php the_content(); ?>
-                                <?php displayFileUrlFileSize(); ?>
+                                <?php display_file_url_file_size(); ?>
                             </div>
                         </article>
 					<?php endwhile;
@@ -43,7 +43,7 @@ get_header(); ?>
 					<?php endif;
 					wp_reset_query(); ?>
                 </main>
-				<?php displaySidebar(); ?>
+				<?php display_sidebar(); ?>
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@
 /**
  * Display Authors
  */
-function displayAuthors()
+function display_authors()
 {
     global $post;
 
@@ -27,7 +27,7 @@ function displayAuthors()
 /**
  * @return bool
  */
-function displaySidebar()
+function display_sidebar()
 {
     global $post;
     if (function_exists('get_post_meta') & function_exists('get_sidebar')) {
@@ -43,7 +43,7 @@ function displaySidebar()
 /**
  * @return bool
  */
-function displayDateOfPublication()
+function display_date_of_publication()
 {
     global $post;
 
@@ -56,7 +56,7 @@ function displayDateOfPublication()
 /**
  * @return bool
  */
-function displayKeywordsTaxonomy()
+function display_keywords_taxonomy()
 {
     global $post;
     if (function_exists('wp_get_post_terms')) {
@@ -78,7 +78,7 @@ function displayKeywordsTaxonomy()
 /**
  * @return bool
  */
-function displayPublishedBy()
+function display_published_by()
 {
     global $post;
     if (function_exists('get_post_meta')) {
@@ -94,7 +94,7 @@ function displayPublishedBy()
 /**
  * @return bool
  */
-function displayFileUrlFileSize()
+function display_file_url_file_size()
 {
     global $post;
     if (function_exists('get_post_meta')) {
