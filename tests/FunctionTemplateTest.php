@@ -8,7 +8,7 @@
  */
 class FunctionTemplateTest extends PHPUnit_Framework_TestCase
 {
-    public function test_exists_displayAuthors()
+	public function test_exists_displayAuthors()
     {
         $this->assertTrue(function_exists('display_authors'));
     }
@@ -66,4 +66,13 @@ class FunctionTemplateTest extends PHPUnit_Framework_TestCase
     {
         $this->assertFalse(display_file_url_file_size());
     }
+
+	public function test_exists_sidebar_title()
+	{
+		$this->assertTrue(function_exists('sidebar_title'));
+	}
+	public function test_exists_sidebar_content()
+	{
+		$this->assertTrue(function_exists('sidebar_content'));
+	}
 }
