@@ -40,16 +40,10 @@ get_header();
                         <?php if ($child->have_posts()) : while ($child->have_posts()) : $child->the_post(); ?>
                             <div class="content-box">
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                    <h3>
-                                        <?php the_title(); ?>
-                                    </h3>
+                                    <h3><?php the_title(); ?></h3>
                                 </a>
-                                <span class="entry-meta">
-                                    <?php display_authors(); ?>
-                                </span>
-                                <p>
-                                    <?php the_excerpt(); ?>
-                                </p>
+                                <span class="entry-meta"><?php display_authors(); ?></span>
+                                <p><?php the_excerpt(); ?></p>
                                 <hr>
                             </div>
                         <?php endwhile; else: ?>

@@ -114,24 +114,24 @@ function display_file_url_file_size() {
 /**
  * Display Sidebar Title
  */
-function sidebar_title(){
+function sidebar_title() {
 	global $post;
-	$parent_id = $post->post_parent;
-	$get_grandparent = get_post($parent_id);
-	$grandparent_id = $get_grandparent->post_parent;
-	$home_id = get_option('page_on_front');
-	// This gets the link to the parent page, based on the parent page ID
-	$parent_page_id = ($parent_id == 0 ? $home_id : $parent_id);
-	$redirectHeading = get_post_meta( $parent_page_id, 'redirectUrl', true );
-	if (function_exists('is_page_template')) {
-		if (is_page_template('page-research-repository-landing.php')) {
-			echo 'Also in '.get_the_title($parent_id);
-		} elseif (is_page_template('page-research-repository-details.php' && $redirectHeading)) {
-			echo sprintf('<a href="%s">Also in %s</a>',
-				get_permalink( $grandparent_id ),get_the_title( $grandparent_id ));
+	if ( function_exists( 'is_page_template' ) && function_exists('get_post') && function_exists('get_option') && function_exists('get_post_meta') ) {
+		$parent_id       = $post->post_parent;
+		$get_grandparent = get_post( $parent_id );
+		$grandparent_id  = $get_grandparent->post_parent;
+		$home_id         = get_option( 'page_on_front' );
+		// This gets the link to the parent page, based on the parent page ID
+		$parent_page_id  = ( $parent_id == 0 ? $home_id : $parent_id );
+		$redirectHeading = get_post_meta( $parent_page_id, 'redirectUrl', true );
+		if ( is_page_template( 'page-research-repository-landing.php' ) ) {
+			echo 'Also in ' . get_the_title( $parent_id );
+		} elseif ( is_page_template( 'page-research-repository-details.php' && $redirectHeading ) ) {
+			echo sprintf( '<a href="%s">Also in %s</a>',
+				get_permalink( $grandparent_id ), get_the_title( $grandparent_id ) );
 		}
-    }
-    return false;
+	}
+	return false;
 }
 
 /**
@@ -139,8 +139,8 @@ function sidebar_title(){
  */
 function sidebar_content() {
 	global $post;
+	if ( function_exists( 'is_page_template' ) && function_exists( 'get_post_meta' ) && function_exists('get_option') && function_exists('get_pages') ) {
 	       $home_id = get_option('page_on_front');
-	if ( function_exists( 'is_page_template' ) && function_exists( 'get_post_meta' ) ) {
 		if ( is_page_template( 'page-research-repository-landing.php' ) ) {
 			$args = array(
 				'child_of'     => $parent_id,

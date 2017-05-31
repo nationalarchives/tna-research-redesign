@@ -71,8 +71,16 @@ class FunctionTemplateTest extends PHPUnit_Framework_TestCase
 	{
 		$this->assertTrue(function_exists('sidebar_title'));
 	}
+	public function test_assertFalse_sidebar_title()
+	{
+		$this->assertFalse(sidebar_title());
+	}
 	public function test_exists_sidebar_content()
 	{
 		$this->assertTrue(function_exists('sidebar_content'));
+	}
+	public function test_assertFalse_sidebar_content()
+	{
+		$this->assertFalse(sidebar_content());
 	}
 }

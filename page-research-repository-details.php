@@ -19,22 +19,35 @@ get_header(); ?>
                                 <?php display_authors(); ?>
                                 </span>
                                 <br/>
-                                <span class="entry-meta">
-                                    <strong>Date of publication: </strong>
-                                    <?php display_date_of_publication(); ?>
-                                </span>
-                                <br/>
-                                <span class="entry-meta">
-                                    <strong>Keywords:</strong>
-	                                <?php display_keywords_taxonomy(); ?>
-                                </span>
-                                <br/>
-                                <span class="entry-meta">
-                                    <?php display_published_by(); ?>
-                                </span>
+	                            <?php
+                                    global $post;
+                                    $datePublished = get_post_meta( $post->ID, 'date_published', true );
+                                    if (!empty($datePublished)) {
+	                                    echo'<span class="entry-meta">';
+                                        echo '<strong>Date of publication: </strong>';
+                                        display_date_of_publication();
+                                        echo '</span><br/>';
+                                    }
+                                ?>
+								<?php
+                                    if ( display_keywords_taxonomy() >= 1 ) {
+                                        echo '<span class="entry-meta">';
+                                        echo '<strong>Keywords:</strong>';
+                                        display_keywords_taxonomy();
+                                        echo '</span><br/>';
+                                    }
+								?>
+                                <?php
+                                    $publishedBy = get_post_meta( $post->ID, 'published_by', true );
+                                    if (!empty($publishedBy)) {
+                                        echo '<span class="entry-meta">';
+                                        display_published_by();
+                                        echo '</span>';
+                                    }
+                                ?>
                                 <hr>
 								<?php the_content(); ?>
-                                <?php display_file_url_file_size(); ?>
+								<?php display_file_url_file_size(); ?>
                             </div>
                         </article>
 					<?php endwhile;
