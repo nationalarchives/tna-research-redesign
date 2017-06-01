@@ -34,10 +34,10 @@ get_header(); ?>
                                     }
                                 ?>
 								<?php
-                                    if ( display_keywords_taxonomy() >= 1 ) {
+                                    if ( is_object_in_term( $post->ID, 'keywords' ) ) {
                                         echo '<span class="entry-meta">';
-                                        echo '<strong>Keywords:</strong>';
-                                        display_keywords_taxonomy();
+                                        echo '<strong>Keywords: </strong>';
+	                                        display_keywords_taxonomy();
                                         echo '</span><br/>';
                                     }
 								?>
