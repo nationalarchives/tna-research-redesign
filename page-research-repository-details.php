@@ -15,12 +15,16 @@ get_header(); ?>
                                 <h1><?php the_title(); ?></h1>
                             </div>
                             <div class="entry-content clearfix">
-                                <span class="entry-meta">
-                                <?php display_authors(); ?>
-                                </span>
-                                <br/>
+                                <?php
+                                global $post;
+                                $lead_author = get_post_meta( $post->ID, 'lead_author', true );
+                                if (!empty($lead_author)){
+                                    echo '<span class="entry-meta">';
+	                                display_authors();
+	                                echo '</span><br/>';
+                                }
+                                ?>
 	                            <?php
-                                    global $post;
                                     $datePublished = get_post_meta( $post->ID, 'date_published', true );
                                     if (!empty($datePublished)) {
 	                                    echo'<span class="entry-meta">';
@@ -47,7 +51,12 @@ get_header(); ?>
                                 ?>
                                 <hr>
 								<?php the_content(); ?>
-								<?php display_file_url_file_size(); ?>
+								<?php
+                                    $fileUrl   = get_post_meta( $post->ID, 'file_url', true );
+                                    if (!empty($fileUrl)) {
+                                        display_file_url_file_size();
+                                    }
+                                ?>
                             </div>
                         </article>
 					<?php endwhile;

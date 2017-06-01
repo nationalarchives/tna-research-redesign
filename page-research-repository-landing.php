@@ -8,10 +8,6 @@ get_header();
 
     <div id="primary" class="content-area">
         <div class="container">
-            <?php
-                //echo wp_get_theme();
-                //die();
-            ?>
             <div class="row">
                 <main id="main" class="col-xs-12 col-sm-8 col-md-8" role="main">
                     <?php $feat_image = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>
