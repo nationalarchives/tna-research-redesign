@@ -1,42 +1,52 @@
-.page-template-page-section-landing {
+.page-template-page-research-repository-landing {
   article {
-    //margin-bottom: 1.5em;
-  }
-}
-main {
-  margin-bottom: 1.5em;
-  article {
-    //margin-bottom: 0;
+    margin-bottom: 0;
     .img-container {
-      min-height: 300px;
+      min-height: 288px;
+      background-position: center;
+      background-size: cover;
+    }
+    main {
+      margin-bottom: 1.5em;
+      .img-container {
+        min-height: 300px;
+      }
     }
   }
   .secondary-content {
+    margin-bottom: 1.5em;
     background-color: #ffffff;
     padding: 20px;
+    .content-box:first-of-type {
+      margin-top: 0;
+    }
     .content-box {
-
+      margin-top: 4em;
     }
   }
 }
-p {
-  margin-bottom: 0;
-}
-.entry-meta {
-  font-size: .9em;
-}
-.file-link {
-  margin-top: 1em;
-  a {
-    float: right;
+.page-template-page-research-repository-details {
+  .entry-meta {
+    font-size: .9em;
+  }
+  .file-link {
+    margin-top: 1em;
+    a {
+      float: right;
+    }
   }
 }
 
 @media (max-width: 767px) {
-  main {
-    margin-bottom: 1.5em;
-    article {
-      margin-bottom: 0;
+  .page-template-page-research-repository-landing {
+    main {
+      margin-bottom: 1.5em;
+      article {
+        margin-bottom: 0;
+      }
+      .secondary-content {
+        margin-bottom: 0;
+      }
     }
   }
 }

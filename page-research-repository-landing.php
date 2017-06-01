@@ -8,13 +8,17 @@ get_header();
 
     <div id="primary" class="content-area">
         <div class="container">
+            <?php
+                //echo wp_get_theme();
+                //die();
+            ?>
             <div class="row">
                 <main id="main" class="col-xs-12 col-sm-8 col-md-8" role="main">
                     <?php $feat_image = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                             <div class="entry-header img-container"
-                                 style="background-image: url('<?php echo preg_replace('/https?:\/\/research.(live|dev|test)lb\.nationalarchives\.gov\.uk\//', '/', $feat_image); ?>')">
+                                 style="background-image: url('<?php echo make_path_relative($feat_image); ?>')">
                                 <h1><?php the_title(); ?></h1>
                             </div>
                             <div class="entry-content clearfix">
@@ -26,7 +30,7 @@ get_header();
                         <p>Sorry, no content</p>
                     <?php endif;
                     wp_reset_query(); ?>
-                    <div class="col-xs-12 col-md-12 secondary-content">
+                    <div class="secondary-content">
                         <?php
                         $args = array(
                             'post_type' => 'page',
