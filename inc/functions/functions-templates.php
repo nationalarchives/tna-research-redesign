@@ -84,7 +84,7 @@ function display_published_by() {
 	if ( function_exists( 'get_post_meta' ) ) {
 		$publishedBy = get_post_meta( $post->ID, 'published_by', true );
 		if ( $publishedBy ) {
-			echo "<strong>Published by:</strong> $publishedBy";
+			echo "<strong>Published in:</strong> $publishedBy";
 		}
 	}
 

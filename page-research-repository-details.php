@@ -33,22 +33,22 @@ get_header(); ?>
                                         echo '</span><br/>';
                                     }
                                 ?>
-								<?php
-                                    if ( is_object_in_term( $post->ID, 'keywords' ) ) {
-                                        echo '<span class="entry-meta">';
-                                        echo '<strong>Keywords: </strong>';
-	                                        display_keywords_taxonomy();
-                                        echo '</span><br/>';
-                                    }
-								?>
                                 <?php
                                     $publishedBy = get_post_meta( $post->ID, 'published_by', true );
                                     if (!empty($publishedBy)) {
                                         echo '<span class="entry-meta">';
                                         display_published_by();
-                                        echo '</span>';
+                                        echo '</span><br/>';
                                     }
                                 ?>
+	                            <?php
+	                            if ( is_object_in_term( $post->ID, 'keywords' ) ) {
+		                            echo '<span class="entry-meta">';
+		                            echo '<strong>Keywords: </strong>';
+		                            display_keywords_taxonomy();
+		                            echo '</span>';
+	                            }
+	                            ?>
                                 <hr>
 								<?php the_content(); ?>
 								<?php
