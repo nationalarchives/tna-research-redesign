@@ -43,7 +43,7 @@ get_header();
                                     <h3><?php the_title(); ?></h3>
                                 </a>
                                 <span class="entry-meta"><?php display_authors(); ?></span>
-                                <p><?php the_excerpt(); ?></p>
+                                <?php the_excerpt(); ?>
                                 <hr>
                             </div>
                         <?php endwhile; else: ?>

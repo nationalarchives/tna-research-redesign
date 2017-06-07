@@ -14,15 +14,15 @@ function setThemeGlobals($environment = null) {
 		case 'local':
 		case 'development':
 			$pre_path = '';
-			$pre_crumbs = array('research' => '/');
+			$pre_crumbs = array('Research and Scholarship' => '/');
 			break;
 		case 'external':
 			$pre_crumbs = array(
 				'About' => '/about/',
 				'Our role' => '/about/our-role/',
-				'Research' => '/about/our-role/research/'
+				'Research' => '/about/our-role/research-and-scholarship/'
 			);
-			$pre_path = '/about/our-role/research';
+			$pre_path = '/about/our-role/research-and-scholarship';
 			break;
 	}
 }
