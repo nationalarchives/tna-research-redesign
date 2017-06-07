@@ -20,7 +20,7 @@ function setThemeGlobals($environment = null) {
 			$pre_crumbs = array(
 				'About' => '/about/',
 				'Our role' => '/about/our-role/',
-				'Research' => '/about/our-role/Research and Scholarship/'
+				'Research' => '/about/our-role/research-and-scholarship/'
 			);
 			$pre_path = '/about/our-role/research-and-scholarship';
 			break;
