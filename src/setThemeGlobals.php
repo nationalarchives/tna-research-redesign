@@ -22,7 +22,7 @@ function setThemeGlobals($environment = null) {
 				'Our role' => '/about/our-role/',
 				'Research' => '/about/our-role/Research and Scholarship/'
 			);
-			$pre_path = '/about/our-role/research-and Scholarship';
+			$pre_path = '/about/our-role/research-and-scholarship';
 			break;
 	}
 }

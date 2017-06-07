@@ -118,8 +118,6 @@ function sidebar_title() {
 	global $post;
 	if ( function_exists( 'is_page_template' ) && function_exists('get_post') && function_exists('get_option') && function_exists('get_post_meta') ) {
 		$parent_id       = $post->post_parent;
-		//$get_grandparent = get_post( $parent_id );
-		//$grandparent_id  = $get_grandparent->post_parent;
 		$home_title = get_the_title( get_option('page_on_front') );
 		$home_id    = get_option( 'page_on_front' );
 		// This gets the link to the parent page, based on the parent page ID
