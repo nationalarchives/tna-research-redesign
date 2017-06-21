@@ -18,7 +18,7 @@ get_header(); ?>
 					</article>
 				</div>
 			</div>
-			<?php get_template_part( 'inc/content/children-grandchildren-loop' ); ?>
+			<?php get_template_part( 'inc/content/children-grandchildren-loop-no-children-no-image' ); ?>
 		</div>
 	</main>
 <?php get_footer(); ?>
