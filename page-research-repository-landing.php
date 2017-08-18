@@ -39,7 +39,7 @@ get_header();
                         $child = new WP_Query($args); ?>
                         <?php if ($child->have_posts()) : while ($child->have_posts()) : $child->the_post(); ?>
                             <div class="content-box">
-                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                <a href="<?php echo make_path_relative( get_permalink() ); ?>" title="<?php the_title(); ?>">
                                     <h3><?php the_title(); ?></h3>
                                 </a>
                                 <span class="entry-meta"><?php display_authors(); ?></span>

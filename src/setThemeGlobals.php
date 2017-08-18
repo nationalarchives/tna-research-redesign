@@ -19,10 +19,10 @@ function setThemeGlobals($environment = null) {
 		case 'external':
 			$pre_crumbs = array(
 				'About' => '/about/',
-				'Our role' => '/about/our-role/',
-				'Our research and collaboration' => '/about/our-role/our-research-and-collaboration/'
+				'Our role' => '/about/',
+				'Our research and collaboration' => '/about/our-research-and-academic-collaboration/'
 			);
-			$pre_path = '/about/our-role/our-research-and-collaboration';
+			$pre_path = '/about/our-research-and-academic-collaboration';
 			break;
 	}
 }
