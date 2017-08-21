@@ -21,8 +21,12 @@ include 'inc/functions/functions-templates.php';
 /**
  * Add actions
  */
-add_action('wp_enqueue_scripts', 'dequeue_parent_style', 9999);
-add_action('wp_head', 'dequeue_parent_style', 9999);
-add_action('wp_enqueue_scripts', 'tna_child_styles');
-add_action( 'init', 'custom_taxonomy' );
-add_action( 'init', 'research_meta_boxes' );
+if (function_exists('add_action'))
+{
+    add_action('wp_enqueue_scripts', 'dequeue_parent_style', 9999);
+    add_action('wp_head', 'dequeue_parent_style', 9999);
+    add_action('wp_enqueue_scripts', 'tna_child_styles');
+    add_action('init', 'custom_taxonomy');
+    add_action('init', 'research_meta_boxes');
+    add_action('init', 'section_landing_image_banner');
+}
