@@ -112,7 +112,7 @@ function section_landing_image_banner() {
     }
     if( !isset( $post_id ) ) return;
     $template_file = get_post_meta($post_id, '_wp_page_template', true);
-    if ($template_file == 'section_landing_image_banner.php') {
+    if ($template_file == 'section-landing-image-banner.php') {
         foreach ( $section_landing_meta_boxes as $meta_box ) {
             $research_box = new CreateMetaBox( $meta_box );
         }
