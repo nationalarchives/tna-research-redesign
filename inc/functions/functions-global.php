@@ -69,7 +69,7 @@ function banner_content_overlay ()
                 <?php
                 if ($buttonTitle) { ?>
                     <div class="col-xs-3 call-to-action-button">
-                        <a href="<?= $buttonUrl; ?>" title="<?= $buttonTitle; ?>" class="ghost-button">
+                        <a href="<?= $buttonUrl; ?>" title="<?= $buttonTitle; ?>" class="ghost-button" target="_blank">
                             <?= $buttonTitle; ?>
                         </a>
                     </div>
