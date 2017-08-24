@@ -46,7 +46,8 @@ get_header();
                                 <?php the_excerpt(); ?>
                                 <hr>
                             </div>
-                        <?php endwhile; else: ?>
+                        <?php endwhile;
+                        else: ?>
                             <p>Sorry, no content</p>
                         <?php endif;
                         wp_reset_query(); ?>
