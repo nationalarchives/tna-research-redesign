@@ -40,5 +40,8 @@
   @media (max-width: 1128px) {
     .page-template-section-landing-image-banner .banner.feature-img-bg .entry-content p {
       padding: 6px 0 0 0; } }
+.page-template-section-landing-image-banner .banner.feature-img-bg .entry-content .ghost-button {
+  line-height: 1.4em;
+  padding: 10px; }
 
 /*# sourceMappingURL=main.css.map */
