@@ -12,7 +12,7 @@
     );
     while ( $childpages->have_posts() ) : $childpages->the_post();
         ?>
-        <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="col-xs-12 col-sm-6 col-md-6 box">
             <article>
                 <div class="entry-header">
                     <h2>
@@ -33,7 +33,7 @@
                     $image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'landing-page-children-thumb' );
                     if ( $image_url ) {
                     if ( $redirect ) { ?>
-                    <a href="<?php echo $redirect; ?>" class="thumbnail" title="<?php echo $post->post_title ?>">
+                        <a href="<?php echo $redirect; ?>" class="thumbnail" title="<?php echo $post->post_title ?>">
                         <?php } else { ?>
                         <a href="<?php echo make_path_relative( get_page_link() ) ?>" class="thumbnail" title="<?php echo $post->post_title ?>">
                             <?php } ?>

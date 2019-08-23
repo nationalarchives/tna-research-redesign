@@ -73,16 +73,17 @@ function banner_content_overlay ()
             // Do nothing - banner content overlay is not displayed
         } else { // Banner content overlay ?>
             <div class="entry-content">
-                <div class="col-xs-9 page-content">
+                <div class="tag-line">
                     <?php the_content(); ?>
                 </div>
                 <?php
                 if (isset($buttonTitle)) { ?>
-                    <div class="col-xs-3 call-to-action-button">
-                        <a href="<?= $buttonUrl; ?>" title="<?= $buttonTitle; ?>" class="ghost-button" target="_blank">
-                            <?= $buttonTitle; ?>
-                        </a>
-                    </div>
+                <div class="call-to-action-button">
+                    <a href="<?php echo $buttonUrl; ?>" title="<?php echo $buttonTitle; ?>"
+                       class="button">
+                        <?php echo $buttonTitle; ?>
+                    </a>
+                </div>
                 <?php } ?>
             </div>
         <?php }

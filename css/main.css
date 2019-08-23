@@ -34,14 +34,5 @@
 @media (max-width: 480px) {
   .page-template-section-landing-image-banner .banner.feature-img-bg {
     background-position: right; } }
-.page-template-section-landing-image-banner .banner.feature-img-bg .entry-content p {
-  margin: 0;
-  padding: 18px 0 0 0; }
-  @media (max-width: 1128px) {
-    .page-template-section-landing-image-banner .banner.feature-img-bg .entry-content p {
-      padding: 6px 0 0 0; } }
-.page-template-section-landing-image-banner .banner.feature-img-bg .entry-content .ghost-button {
-  line-height: 1.4em;
-  padding: 10px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -10,7 +10,7 @@ get_header(); ?>
 				<div class="col-md-12">
 					<article>
 						<div class="entry-header">
-							<h1><?php the_title(); ?></h1>
+							<h1 class="separator-heading"><?php the_title(); ?></h1>
 						</div>
 						<div class="row entry-content">
 							<?php get_template_part( 'inc/content/feature-box' ); ?>
