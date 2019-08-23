@@ -12,10 +12,10 @@
 	);
 	while ( $childpages->have_posts() ) : $childpages->the_post();
 		?>
-        <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="col-xs-12 col-sm-6 col-md-6 box">
             <article>
                 <div class="entry-header">
-                    <h2>
+                    <h2 class="separator-heading">
 						<?php $redirect = get_post_meta( $post->ID, 'redirectUrl', true );
 						if ( $redirect ) { ?>
                             <a href="<?php echo $redirect; ?>" title="<?php echo $post->post_title ?>">
