@@ -17,6 +17,7 @@ function setThemeGlobals($environment = null) {
 			$pre_crumbs = array('Research and Scholarship' => '/');
 			break;
 		case 'external':
+        case 'aws_public':
 			$pre_crumbs = array(
 				'About' => '/about/',
 				'Our research & academic collaboration' => '/about/our-research-and-academic-collaboration/'
