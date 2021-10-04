@@ -12,7 +12,6 @@
 
 ### 1.1 Installing dependencies
 
-This repository is configured to allow for easy integration with Travis CI (Continuous Integration).
 
 #### 1.1.1 Obtaining dependencies via Composer
 
